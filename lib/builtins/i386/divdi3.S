@@ -2,6 +2,7 @@
 // Source Licenses. See LICENSE.TXT for details.
 
 #include "../assembly.h"
+#include "safeseh.h"
 
 // di_int __divdi3(di_int a, di_int b);
 
@@ -19,6 +20,7 @@
 #ifdef __i386__
 
 .text
+WIN32_SAFE_SEH_HEADER
 .balign 4
 DEFINE_COMPILERRT_FUNCTION(__divdi3)
 

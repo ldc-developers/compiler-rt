@@ -2,6 +2,7 @@
 // Source Licenses. See LICENSE.TXT for details.
 
 #include "../assembly.h"
+#include "safeseh.h"
 
 // _chkstk routine
 // This routine is windows specific
@@ -10,6 +11,7 @@
 #ifdef __i386__
 
 .text
+WIN32_SAFE_SEH_HEADER
 .balign 4
 DEFINE_COMPILERRT_FUNCTION(__chkstk_ms)
         push   %ecx

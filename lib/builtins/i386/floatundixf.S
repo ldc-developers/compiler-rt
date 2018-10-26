@@ -2,6 +2,7 @@
 // Source Licenses. See LICENSE.TXT for details.
 
 #include "../assembly.h"
+#include "safeseh.h"
 
 // long double __floatundixf(du_int a);16
 
@@ -24,6 +25,7 @@ twop84:
 #define REL_ADDR(_a)	(_a)-0b(%eax)
 
 .text
+WIN32_SAFE_SEH_HEADER
 .balign 4
 DEFINE_COMPILERRT_FUNCTION(__floatundixf)
 	calll	0f

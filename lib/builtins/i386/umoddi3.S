@@ -2,6 +2,7 @@
 // Source Licenses. See LICENSE.TXT for details.
 
 #include "../assembly.h"
+#include "safeseh.h"
 
 // du_int __umoddi3(du_int a, du_int b);
 
@@ -20,6 +21,7 @@
 #ifdef __i386__
 
 .text
+WIN32_SAFE_SEH_HEADER
 .balign 4
 DEFINE_COMPILERRT_FUNCTION(__umoddi3)
 

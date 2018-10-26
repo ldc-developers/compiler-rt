@@ -2,6 +2,7 @@
 // Source Licenses. See LICENSE.TXT for details.
 
 #include "../assembly.h"
+#include "safeseh.h"
 
 // float __floatundisf(du_int a);
 
@@ -27,6 +28,7 @@ twop64:	.quad	0x0000000000000000
 #define			TWOp64			twop64-0b(%ecx,%eax,8)
 
 .text
+WIN32_SAFE_SEH_HEADER
 .balign 4
 DEFINE_COMPILERRT_FUNCTION(__floatundisf)
 	movl		8(%esp),		%eax
@@ -72,6 +74,7 @@ twelve:
 #define			STICKY			sticky-0b(%ecx,%eax,8)
 
 .text
+WIN32_SAFE_SEH_HEADER
 .balign 4
 DEFINE_COMPILERRT_FUNCTION(__floatundisf)
 	movl		8(%esp),		%eax

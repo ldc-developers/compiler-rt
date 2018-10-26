@@ -2,6 +2,7 @@
 // Source Licenses. See LICENSE.TXT for details.
 
 #include "../assembly.h"
+#include "safeseh.h"
 
 #ifdef __i386__
 
@@ -11,6 +12,7 @@
 // http://msdn.microsoft.com/en-us/library/ms648426.aspx
 
 .text
+WIN32_SAFE_SEH_HEADER
 .balign 4
 DEFINE_COMPILERRT_FUNCTION(_alloca) // _chkstk and _alloca are the same function
 DEFINE_COMPILERRT_FUNCTION(__chkstk)
