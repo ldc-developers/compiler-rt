@@ -2,6 +2,7 @@
 // Source Licenses. See LICENSE.TXT for details.
 
 #include "../assembly.h"
+#include "safeseh.h"
 
 // float __floatdixf(di_int a);
 
@@ -15,6 +16,7 @@
 // It can be turned off by defining the TRUST_CALLERS_USE_64_BIT_STORES macro.
 
 .text
+WIN32_SAFE_SEH_HEADER
 .balign 4
 DEFINE_COMPILERRT_FUNCTION(__floatdixf)
 #ifndef TRUST_CALLERS_USE_64_BIT_STORES

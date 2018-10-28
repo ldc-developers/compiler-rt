@@ -12,6 +12,7 @@
 //===----------------------------------------------------------------------===//
 
 #include "../assembly.h"
+#include "safeseh.h"
 
 // double __floatundidf(du_int a);
 
@@ -34,6 +35,7 @@ twop84:
 #define REL_ADDR(_a)	(_a)-0b(%eax)
 
 .text
+WIN32_SAFE_SEH_HEADER
 .balign 4
 DEFINE_COMPILERRT_FUNCTION(__floatundidf)
 	movss	8(%esp),						%xmm1 // high 32 bits of a
